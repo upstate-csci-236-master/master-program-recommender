@@ -12,24 +12,24 @@ So how might we write a program to make recommendations for books? Consider a us
 
 We could make a better prediction about what Carlos might like by considering his actual ratings in the past and how these ratings compare to the ratings given by other customers. Consider how you decide on movie recommendations from friends. If a friend tells you about a number of movies that s(he) enjoyed and you also enjoyed them, then when your friend recommends another movie that you have never seen, you probably are willing to go see it. On the other hand, if you and a different friend always tend to disagree about movies, you are not likely to go to see a movie this friend recommends.
 
-Your task for this project is to write a program that takes people's book ratings and makes book recommendations to them using both techniques described above. We will refer to the people who use the program as "users".
+Your task for this project is to write a program that reads the name of a ratings file from the command line and takes people's book ratings and makes book recommendations to them using both techniques described above. We will refer to the people who use the program as "users".
 
 # Implementation Details:
 
-Your program will read user date from a file that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. Example in repository. 
+Your program will read user date from a file (name of file comes from command line) that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. Example in repository. 
 
-When your program starts it should read through the file and create a list with one occurrence of each book in the file. For example, the file in the repository (ratings-small.txt) might produce the following list:
+When your program starts it should read through the file (name from command line) and create a list with one occurrence of each book in the file. For example, the file in the repository (ratings-small.txt) might produce the following list:
 
-['1984', 'Cats', 'Harry Potter', 'Animal Farm', 'Watership Down', 'The Hobbit']
+['1984', 'Cats', 'Harry Potter', 'Animal Farm', 'Watership Down', 'Lord of the Rings']
 
 Note that the order of the books does not matter. We suggest that you create this list by putting all books in the file into a set and then casting that set to a list. If you have a variable called data that stores a set, you can turn it into a list by writing data = list(data). 
 
 Once you have this list, create a dictionary to store the rating data and loop through the file again. This time add each person in the file as a key to the dictionary. The value that is associated with them should be a list the same length as the list of books you created in your first pass through the file. You should store the rating at the same index that book’s name appears at in in the list of books. For example, when the first three lines of the file in the repository are read, we would add a mapping from the key Bob to a value of [1, 0, 0, 0, 0, 0]. Books that the user has not rated (or whose ratings we have not read yet, as in this case) should be represented by 0s.
 
-The dictionary created with the file ratings-small.txt and the list of books written above would be as follows:
+The dictionary created with the file ratings-small.txt in the repository would be as follows:
 
-{ 'Kalid'  : [0, 0, 1, -3, 3, 0],  'Carlos' : [-5, 0, 3, 1, 0, 0], 
-  'Suelyn' : [1, 0, 1, -3, 0, 0],  'Bob'    : [0, 1, -3, 0, 0, 1]  }
+{ 'Kalid'  : [0, 0, 3, -3, 5, 0],  'Carlos' : [-5, 0, 5, 1, 0, 0], 
+  'Suelyn' : [5, 0, 1, -3, 0, 0],  'Bob'    : [0, 5, -3, 0, 0, 5]  }
 
 Now your program is ready to make recommendations. It should output the following message:
 
@@ -104,5 +104,5 @@ Comment descriptively at the top of your program, each function, and on complex 
 
 # submission
 
-Submit your python code in a file named recommender.py
+Submit your python code in a file named recommender.py. No need to upload test files, they will be provided in CodePost for you. 
 
