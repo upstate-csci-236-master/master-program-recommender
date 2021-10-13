@@ -37,7 +37,9 @@ Welcome to the CSCI 236 Book Recommender. Type the word in the
 left column to do the action on the right.
 
 recommend : recommend books for a particular user
+
 averages  : output the average ratings of all books in the system
+
 quit      : exit the program
 
 next task?
