@@ -18,7 +18,7 @@ Your task for this project is to write a program that takes people's book rating
 
 Your program will read user date from a file that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. An example is displayed on the right. 
 
-When your program starts it should read through the file and create a list with one occurrence of each book in the file. For example, the file at right might produce the following list:
+When your program starts it should read through the file and create a list with one occurrence of each book in the file. For example, the file in the repository (ratings-small.txt) might produce the following list:
 
 ['1984', 'Cats', 'Harry Potter', 'Animal Farm', 'Watership Down', 'The Hobbit']
 
@@ -26,14 +26,14 @@ Note that the order of the books does not matter. We suggest that you create thi
 
 Once you have this list, create a dictionary to store the rating data and loop through the file again. This time add each person in the file as a key to the dictionary. The value that is associated with them should be a list the same length as the list of books you created in your first pass through the file. You should store the rating at the same index that book’s name appears at in in the list of books. For example, when the first three lines of the file on the right are read, we would add a mapping from the key Bob to a value of [1, 0, 0, 0, 0, 0]. Books that the user has not rated (or whose ratings we have not read yet, as in this case) should be represented by 0s.
 
-The dictionary created with the file at right and the list of books written above would be as follows:
+The dictionary created with the file ratings-small.txt and the list of books written above would be as follows:
 
 { 'Kalid'  : [0, 0, 1, -3, 3, 0],  'Carlos' : [-5, 0, 3, 1, 0, 0], 
   'Suelyn' : [1, 0, 1, -3, 0, 0],  'Bob'    : [0, 1, -3, 0, 0, 1]  }
 
 Now your program is ready to make recommendations. It should output the following message:
 
-Welcome to the CSC110 Book Recommender. Type the word in the
+Welcome to the CSCI 236 Book Recommender. Type the word in the
 left column to do the action on the right.
 
 recommend : recommend books for a particular user
@@ -54,7 +54,7 @@ Since the averages will stay the same throughout the run of the program you may 
 
 Recommendations
 
-When the user selects the recommend option the program should first prompt the user for the name of the user that the program wants recommendations for as follows:
+When the user selects the recommend option the program should first prompt the user for the name of the user that the user wants recommendations for as follows:
 
 user?
 
@@ -99,3 +99,8 @@ Redundancy is always a major grading focus; avoid redundancy and repeated logic 
 Follow good general style guidelines such as: appropriately using control structures like loops and if/else statements; avoiding redundancy using techniques such as functions, loops, and if/else factoring; good variable names, and naming conventions; and not having any lines of code longer than 80 characters. You may have no global variables (except constants) and you may not nest functions inside other functions
 
 Comment descriptively at the top of your program, each function, and on complex sections of your code.  Comments should explain each function’s behavior, parameters and returns.  
+
+# submission
+
+Submit your python code in a file named recommend.py
+
