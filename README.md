@@ -16,7 +16,7 @@ Your task for this project is to write a program that takes people's book rating
 
 # Implementation Details:
 
-Your program will read user date from a file that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. An example is displayed on the right. 
+Your program will read user date from a file that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. Example in repository. 
 
 When your program starts it should read through the file and create a list with one occurrence of each book in the file. For example, the file in the repository (ratings-small.txt) might produce the following list:
 
@@ -24,7 +24,7 @@ When your program starts it should read through the file and create a list with 
 
 Note that the order of the books does not matter. We suggest that you create this list by putting all books in the file into a set and then casting that set to a list. If you have a variable called data that stores a set, you can turn it into a list by writing data = list(data). 
 
-Once you have this list, create a dictionary to store the rating data and loop through the file again. This time add each person in the file as a key to the dictionary. The value that is associated with them should be a list the same length as the list of books you created in your first pass through the file. You should store the rating at the same index that book’s name appears at in in the list of books. For example, when the first three lines of the file on the right are read, we would add a mapping from the key Bob to a value of [1, 0, 0, 0, 0, 0]. Books that the user has not rated (or whose ratings we have not read yet, as in this case) should be represented by 0s.
+Once you have this list, create a dictionary to store the rating data and loop through the file again. This time add each person in the file as a key to the dictionary. The value that is associated with them should be a list the same length as the list of books you created in your first pass through the file. You should store the rating at the same index that book’s name appears at in in the list of books. For example, when the first three lines of the file in the repository are read, we would add a mapping from the key Bob to a value of [1, 0, 0, 0, 0, 0]. Books that the user has not rated (or whose ratings we have not read yet, as in this case) should be represented by 0s.
 
 The dictionary created with the file ratings-small.txt and the list of books written above would be as follows:
 
@@ -48,7 +48,7 @@ The prompt should be repeated after every task is finished.
 
 Averages
 
-If the user selects the averages option the program should output all of the books in the file sorted by average rating from highest to lowest. For example, for the file on the previous page you should output the listing on the right. 
+If the user selects the averages option the program should output all of the books in the file sorted by average rating from highest to lowest. For example, see the files in the repository.
 
 We suggest that you figure this out by building up a list of tuples containing the average rating for a book first and the title of that book second. You can build up this list by going through the list of books one at a time and for each person in the dictionary adding up their rating of that book and counting how many people in the dictionary rated it something other than 0. The average score for that book is the sum scores divided by the count of non-zero ratings. Once you have created this list you can sort it by using the list’s sort function. 
 
