@@ -1,6 +1,6 @@
 # Recommendation System
 
-This program focuses on using data structures in complex ways.  Turn in a file named recommender.py on the Projects section of the course web site. You will need several txt files containing ratings from the web site; place them in the same folder as your program.
+This program focuses on using data structures in complex ways.  Turn in a file named recommender.py to CodePost. You will need several txt files containing ratings from repository for testing. 
 
 # Background:
 
