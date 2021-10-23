@@ -90,8 +90,6 @@ You will find the list sort function very helpful for this assignment. The sort 
 Use print statements to view the state of your structures. Create small input files for yourself to help you debug. 
 
 
-You should use our Output Comparison Tool to see that your outputs match what is expected.
-
 # Style Guidelines and Grading:
 
 Part of your grade will come from appropriately using data structures and following the algorithms described in this document.  
