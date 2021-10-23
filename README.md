@@ -80,7 +80,7 @@ Once you have calculated these averages, create a list of tuples that contain fi
 
 Note that it must be possible for the user to choose options multiple times in any order and get the correct results each time.  
 
-Your program should match the expected output files provided on the course web page exactly.
+Your program should match the expected output files provided in this repository.
 
 # Development Strategy and Hints:	
 
