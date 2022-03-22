@@ -16,9 +16,9 @@ Your task for this project is to write a program that reads the name of a rating
 
 # Implementation Details:
 
-Your program will read user date from a file (name of file comes from command line) that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. Example in repository. 
+Your program will read user date from a file (name of this data file comes from command line) that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. Example in repository. 
 
-When your program starts it should read through the file (name from command line) and create a list with one occurrence of each book in the file. For example, the file in the repository (ratings-small.txt) might produce the following list:
+When your program starts it should read through the file and creates a list with one occurrence of each book in the file. For example, the file in the repository (ratings-small.txt) might produce the following list:
 
 ['1984', 'Cats', 'Harry Potter', 'Animal Farm', 'Watership Down', 'Lord of the Rings']
 
@@ -31,22 +31,19 @@ The dictionary created with the file ratings-small.txt in the repository would b
 { 'Kalid'  : [0, 0, 3, -3, 5, 0],  'Carlos' : [-5, 0, 5, 1, 0, 0], 
   'Suelyn' : [5, 0, 1, -3, 0, 0],  'Bob'    : [0, 5, -3, 0, 0, 5]  }
 
-Now your program is ready to make recommendations. It should output the following message:
+Now your program is ready to make recommendations. It should then wait for the program-user to enter a command. 
 
-Welcome to the CSCI 236 Book Recommender. Type the word in the
-left column to do the action on the right.
-
-recommend : recommend books for a particular user
-
+recommend : recommend books for a particular recommendation-user
 averages  : output the average ratings of all books in the system
-
 quit      : exit the program
 
-next task?
+DO NOT OUTPUT ANY PROMPTS. 
 
-The prompt should be repeated after every task is finished.
+The program should repeat processing commands until quit is entered. 
 
-Averages
+Here is what each command should do:
+
+# Averages
 
 If the user selects the averages option the program should output all of the books in the file sorted by average rating from highest to lowest. For example, see the files in the repository.
 
@@ -54,33 +51,31 @@ We suggest that you figure this out by building up a list of tuples containing t
 
 Since the averages will stay the same throughout the run of the program you may want to calculate them once at the start of the program. 
 
-Recommendations
+# Recommendations
 
-When the user selects the recommend option the program should first prompt the user for the name of the user that the user wants recommendations for as follows:
+When the program-user selects the recommend option the program should read the requested-user that the program-user wants recommendations for. If the name of the requested-user isn’t in the dictionary of ratings, the program should output the same list of books as when the program-user selects the averages option.
 
-user?
+If the name the program-user inputs is in the dictionary of ratings you should use the data in the dictionary to find the other recommendation-users that are most similar to the requested-user you are looking for recommendations for. 
 
-If the name that the user types in isn’t in the dictionary of ratings, the program should output the same list of books as when the user selects the averages option.
+# How to calculate recommendations
 
-If the name the user inputs is in the dictionary of ratings you should use the data in the dictionary to find the other users that are most similar to the user you are looking for recommendations for. 
-
-The first step to do this is to calculate the similarities between your user and the other users. We will use the dot product between the users’ lists of ratings to calculate their similarity. This means that we will multiply each element in your user’s list with the element at the same index in the other user’s list and sum the result. For example, if we were looking for a recommendation for Kalid we would do the following to calculate his similarity to Carlos:
+The first step to do this is to calculate the similarities between the requested-user and the other recommendation-users. We will use the dot product between the users’ lists of ratings to calculate their similarity. This means that we will multiply each element in your user’s list with the element at the same index in the other user’s list and sum the result. For example, if we were looking for a recommendation for Kalid we would do the following to calculate his similarity to Carlos:
 
 (0 * -5) + (0 * 0) + (1 * 3) + (-3 * 1) + (3 * 0) + (0 * 0) = 0 + 0 + 3 + -3 + 0 + 0 = 0
 
 Compute this similarity for each user in the dictionary. Store tuples containing first the similarity number and second the name of the other user in a list. You can use the list sort function to sort this list.
 
-Note that the user that you are looking for will always be in the dictionary. We are not interesting in how similar the user is to themselves. You may find it helpful not to add the user to the list or to remove them after sorting. Note that the user will always be most similar to themselves. 
+Note that the user that you are looking for will always be in the dictionary. We are not interesting in how similar the requested-user is to themselves. You may find it helpful not to add the user to the list or to remove them after sorting. Note that the requested-user will always be most similar to themselves. 
 
-Now that we have a list of the most similar users, we can use this to figure out which books to recommend. To generate recommendations take an average of the ratings of the three users with the highest similarity to the user you are looking for. 
+Now that we have a list of the most similar users, we can use this to figure out which books to recommend. To generate recommendations take an average of the ratings of the three recommendation-users with the highest similarity to the requested-user you are looking for. 
 
 To average the ratings create a new list the same length as the list of books and filled with 0s. Loop through this list. For every index of this list loop through the first three users, add up their ratings and then divide by the number of non-zero ratings. If there are no non-zero ratings for a book you should not divide as you will get a divide by 0 error. 
 
 Once you have calculated these averages, create a list of tuples that contain first the average rating and then the book title for all books that have non-zero ratings in the averages list. Then, sort this list. Now you have a list of books to recommend.
 
-Note that it must be possible for the user to choose options multiple times in any order and get the correct results each time.  
+Note that it must be possible for the program-user to choose options multiple times in any order and get the correct results each time.  
 
-Your program should match the expected output files provided in this repository.
+Your program should match the expected output files provided in the repository.
 
 # Development Strategy and Hints:	
 
