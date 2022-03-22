@@ -25,6 +25,8 @@ books-list: list of the names of all the books known to your program, read in fr
 average-ratings: a list of tuples that contains the averages of the ratings from the top three recommendation for a each book
 ratings-dictionary: a dictionary containing each recommendation-user and their list of ratings for each book
 program-user commands: a list of commands the program must recognize and process; these are: averages, recommendation, quit
+ratings.dat: a large text file of book ratings used in testing
+small_ratings.dat: a small text file of books ratings used in testing
 ```
 
 # Implementation Details:
