@@ -17,13 +17,13 @@ Your task for this project is to write a program that reads the name of a rating
 # Terminology
 
 ```
-program-user - the person running your program who is looking for book recommendations
-recommendation-user - these come from the recommendation file and are compared against the requested-user
-requested-user - recommendation-user that the program user is asking for their recommendations to be based upon
-rating averages - the average recommendation for each book
-books-list - list of the names of all the books known to your program, read in from a file, the name of the file comes from the command line
-average-ratings - a list of tuples that contains the averages of the ratings from the top three recommendation for a each book
-ratings-dictionary - a dictionary containing each recommendation-user and their list of ratings for each book
+program-user: the person running your program who is looking for book recommendations
+recommendation-user: these come from the recommendation file and are compared against the requested-user
+requested-user: recommendation-user that the program user is asking for their recommendations to be based upon
+rating averages: the average recommendation for each book
+books-list: list of the names of all the books known to your program, read in from a file, the name of the file comes from the command line
+average-ratings: a list of tuples that contains the averages of the ratings from the top three recommendation for a each book
+ratings-dictionary: a dictionary containing each recommendation-user and their list of ratings for each book
 ```
 
 # Implementation Details:
