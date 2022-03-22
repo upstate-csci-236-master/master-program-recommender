@@ -24,7 +24,7 @@ rating averages: the average recommendation for each book
 books-list: list of the names of all the books known to your program, read in from a file, the name of the file comes from the command line
 average-ratings: a list of tuples that contains the averages of the ratings from the top three recommendation for a each book
 ratings-dictionary: a dictionary containing each recommendation-user and their list of ratings for each book
-program-user commands: a list of commands the program must recognize and process; these are: averages, recommendation, quit
+program-user commands: a list of commands the program must recognize and process; these are: averages, recommend, quit
 ratings.dat: a large text file of book ratings used in testing
 small_ratings.dat: a small text file of books ratings used in testing
 ```
