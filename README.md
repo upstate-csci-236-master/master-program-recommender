@@ -14,6 +14,18 @@ We could make a better prediction about what Carlos might like by considering hi
 
 Your task for this project is to write a program that reads the name of a ratings file from the command line and takes people's book ratings and makes book recommendations to them using both techniques described above. We will refer to the people who use the program as "users".
 
+# Terminology
+
+```
+program-user - the person running your program who is looking for book recommendations
+recommendation-user - these come from the recommendation file and are compared against the requested-user
+requested-user - recommendation-user that the program user is asking for their recommendations to be based upon
+rating averages - the average recommendation for each book
+books-list - list of the names of all the books known to your program, read in from a file, the name of the file comes from the command line
+average-ratings - a list of tuples that contains the averages of the ratings from the top three recommendation for a each book
+ratings-dictionary - a dictionary containing each recommendation-user and their list of ratings for each book
+```
+
 # Implementation Details:
 
 Your program will read user date from a file (name of this data file comes from command line) that contains sets of three lines. The first will contain a username, the second a book title and the third the rating that user gave the book. Example in repository. 
@@ -31,7 +43,7 @@ The dictionary created with the file ratings-small.txt in the repository would b
 { 'Kalid'  : [0, 0, 3, -3, 5, 0],  'Carlos' : [-5, 0, 5, 1, 0, 0], 
   'Suelyn' : [5, 0, 1, -3, 0, 0],  'Bob'    : [0, 5, -3, 0, 0, 5]  }
 
-Now your program is ready to make recommendations. It should then wait for the program-user to enter a command. 
+Now your program is ready to make recommendations. It should then wait for the program-user to enter a command. NO PROMPTS. 
 
 recommend : recommend books for a particular recommendation-user
 averages  : output the average ratings of all books in the system
@@ -45,7 +57,7 @@ Here is what each command should do:
 
 # Averages
 
-If the user selects the averages option the program should output all of the books in the file sorted by average rating from highest to lowest. For example, see the files in the repository.
+If the program-user selects the averages option the program should output all of the books in the file sorted by average rating from highest to lowest. For example, see the files in the repository.
 
 We suggest that you figure this out by building up a list of tuples containing the average rating for a book first and the title of that book second. You can build up this list by going through the list of books one at a time and for each person in the dictionary adding up their rating of that book and counting how many people in the dictionary rated it something other than 0. The average score for that book is the sum scores divided by the count of non-zero ratings. Once you have created this list you can sort it by using the list’s sort function. 
 
@@ -63,11 +75,11 @@ The first step to do this is to calculate the similarities between the requested
 
 (0 * -5) + (0 * 0) + (1 * 3) + (-3 * 1) + (3 * 0) + (0 * 0) = 0 + 0 + 3 + -3 + 0 + 0 = 0
 
-Compute this similarity for each user in the dictionary. Store tuples containing first the similarity number and second the name of the other user in a list. You can use the list sort function to sort this list.
+Compute this similarity for each recommendation-user in the dictionary. Store tuples containing first the similarity number and second the name of the other recommendation-user in a list. You can use the list sort function to sort this list.
 
-Note that the user that you are looking for will always be in the dictionary. We are not interesting in how similar the requested-user is to themselves. You may find it helpful not to add the user to the list or to remove them after sorting. Note that the requested-user will always be most similar to themselves. 
+Note that the requested-user that you are looking for will always be in the dictionary. We are not interesting in how similar the requested-user is to themselves. You may find it helpful not to add the user to the list or to remove them after sorting. Note that the requested-user will always be most similar to themselves. 
 
-Now that we have a list of the most similar users, we can use this to figure out which books to recommend. To generate recommendations take an average of the ratings of the three recommendation-users with the highest similarity to the requested-user you are looking for. 
+Now that we have a list of the most similar recommendation-users, we can use this to figure out which books to recommend. To generate recommendations take an average of the ratings of the three recommendation-users with the highest similarity to the requested-user you are looking for. 
 
 To average the ratings create a new list the same length as the list of books and filled with 0s. Loop through this list. For every index of this list loop through the first three users, add up their ratings and then divide by the number of non-zero ratings. If there are no non-zero ratings for a book you should not divide as you will get a divide by 0 error. 
 
